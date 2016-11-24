@@ -15,6 +15,7 @@ feature 'As a visitor I want to create an account' do
     expect(current_path).to eq '/'
     expect(page).to have_link 'Log out'
     expect(page).to have_content 'Thanks for use our Travel Blog'
+    expect(page).not_to have_link 'Sign up'
   end
 
 end
