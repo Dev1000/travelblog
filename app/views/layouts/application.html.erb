@@ -26,13 +26,19 @@
         <li><%= link_to 'Contact', static_pages_contact_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Sign up', static_pages_signup_url %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
 
 <div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <%= value %>
+    </div>
+  <% end %>
+
   <%= yield %>
 </div>
 

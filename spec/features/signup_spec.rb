@@ -8,14 +8,13 @@ feature 'As a visitor I want to create an account' do
     expect(current_path).to eq(new_user_registration_path)
 
     fill_in 'Email', with: 'eduardo@test.com'
-    fill_in 'Password', with: 'test'
-    fill_in 'Password confirmation', with: 'test'
+    fill_in 'Password', with: '123456'
+    fill_in 'Password confirmation', with: '123456'
     click_button 'Sign up'
 
     expect(current_path).to eq '/'
-    expect(page).to have_link 'Log out'
-    expect(page).to have_content 'Thanks for use our Travel Blog'
-    expect(page).not_to have_link 'Sign up'
+    expect(page).to have_content 'A message with a confirmation link has been sent to your email address.'
+    expect(page).to have_link 'Sign up'
   end
 
 end
