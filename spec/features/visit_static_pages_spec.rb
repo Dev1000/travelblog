@@ -13,6 +13,6 @@ feature 'Visit static pages' do
     click_link 'Home'
     expect(page).to have_css 'h1', text: 'Welcome to our Travel Blog!'
     click_link 'Log in'
-    expect(current_path).to eq(new_user_registration_path)
+    expect(current_path).to eq(new_user_session_path)
   end
 end
